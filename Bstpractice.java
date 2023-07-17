@@ -53,4 +53,13 @@ public class Bstpractice {
         }
         return min_ele.left;
     }
+
+    public int getHeight(Node n) {
+        if(node == null) {
+            return -1;
+        }
+        int leftHeight = getHeight(n.left);
+        int rightHeight = getHeight(n.right);
+        return 1+(Math.max(leftHeight, rightHeight));
+    }
 }
