@@ -61,5 +61,22 @@ public class Bstpractice {
         int leftHeight = getHeight(n.left);
         int rightHeight = getHeight(n.right);
         return 1+(Math.max(leftHeight, rightHeight));
+
+        //return 1 + (Math.max(getHeight(n.left), getHeight(n.right));
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public boolean balanced() {
+        return balanced(root);
+    }
+
+    private boolean balanced(Node node) {
+        if(node == null) {
+            return false;
+        }
+        return Math.abs(getHeight(node.left), getHeight(node.right)) && balanced(node.left) && balanced(node.right);
     }
 }
